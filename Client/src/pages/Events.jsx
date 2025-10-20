@@ -124,7 +124,7 @@ function Events() {
                                 color: "accent",
                             },
                         ].map((event, idx) => (
-                            <tr key={idx} className="hover:bg-gray-50 transition cursor-pointer" onClick={() => navigate(`/events/create`)}>
+                            <tr key={idx} className="hover:bg-gray-50 transition cursor-pointer" onClick={() => navigate(`/events/2024-ACLS-001`)}>
                                 <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                                     {event.name}
                                 </td>

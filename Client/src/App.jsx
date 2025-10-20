@@ -8,7 +8,7 @@ import Events from './pages/Events'
 import CreateEvent from './pages/CreateEvent'
 import Users from './pages/Users'
 import Reports from './pages/Reports'
-import Settings from './pages/Settings'
+import EventDetails from './pages/EventDetails'
 
 function App() {
   return (
@@ -25,9 +25,9 @@ function App() {
           <Route key="dashboard" index element={<DashBoard />} />,
           <Route key="events" path="events" element={<Events />} />,
           <Route key="create-event" path="events/create" element={<CreateEvent />} />,
+          <Route key="event-details" path="events/:id" element={<EventDetails />} />,
           <Route key="users" path="users" element={<Users />} />,
-          <Route key="reports" path="reports" element={<Reports />} />,
-          <Route key="settings" path="settings" element={<Settings />} />
+          <Route key="reports" path="reports" element={<Reports />} />
         ]}
       />
     </Routes>
