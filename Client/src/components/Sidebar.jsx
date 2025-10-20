@@ -1,7 +1,16 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'
 
 function Sidebar() {
+    const navigate = useNavigate()
+    const { logout } = useAuth()
+
+    const handleLogout = () => {
+        logout()
+        navigate('/login')
+    }
+
     return (
         <aside className="w-64 bg-white flex flex-col shadow-md">
             <div className="h-20 flex items-center px-6">
@@ -111,6 +120,19 @@ function Sidebar() {
                     <span>Settings</span>
                 </NavLink>
             </nav>
+
+            {/* Logout Button */}
+            <div className="p-4 border-t border-primary/10">
+                <button
+                    onClick={handleLogout}
+                    className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-text-tertiary-light hover:bg-accent-negative/10 hover:text-accent-negative font-medium transition-colors"
+                >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
+                    <span>Logout</span>
+                </button>
+            </div>
         </aside>
     )
 }

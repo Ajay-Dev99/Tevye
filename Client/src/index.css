@@ -24,3 +24,28 @@
   --shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   --shadow-md: 0px 4px 8px rgba(0, 0, 0, 0.07);
 }
+
+/* Toast Animation */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, #007f80, #00B8D9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
